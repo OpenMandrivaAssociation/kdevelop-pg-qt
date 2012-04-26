@@ -32,8 +32,8 @@ This package contains development files of %name.
 %files devel
 %defattr(-,root,root)
 %{_kde_includedir}/%{name}
-%{_kde_appsdir}/cmake/modules/FindKDevelop-PG-Qt.cmake
-
+%{_kde_libdir}/cmake/KDevelop-PG-Qt/KDevelop-PG-QtConfig.cmake
+%{_kde_libdir}/cmake/KDevelop-PG-Qt/KDevelop-PG-QtConfigVersion.cmake
 #--------------------------------------------------------------------
 
 %prep
