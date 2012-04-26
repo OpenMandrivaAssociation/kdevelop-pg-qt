@@ -1,6 +1,6 @@
 Summary: KDevelop-PG-Qt
 Name: kdevelop-pg-qt
-Version: 0.9.5
+Version: 1.0.0
 Release: %mkrel 1
 Source0: http://fr2.rpmfind.net/linux/KDE/stable/%name/%version/src/%name-%version.tar.bz2
 License: GPLv2+
