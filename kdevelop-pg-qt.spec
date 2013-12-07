@@ -1,7 +1,7 @@
 Summary:	KDevelop-PG-Qt is a parser generator
 Name:		kdevelop-pg-qt
 Version:	1.0.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Development/Other
 Url:		http://techbase.kde.org/Development/KDevelop-PG-Qt_Introduction
