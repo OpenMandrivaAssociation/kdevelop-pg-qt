@@ -1,11 +1,12 @@
 Summary:	KDevelop-PG-Qt is a parser generator
 Name:		kdevelop-pg-qt
 Version:	1.0.0
-Release:	8
+Release:	9
 License:	GPLv2+
 Group:		Development/Other
 Url:		http://techbase.kde.org/Development/KDevelop-PG-Qt_Introduction
 Source0:	http://fr2.rpmfind.net/linux/KDE/stable/%{name}/%{version}/src/%{name}-%{version}.tar.bz2
+Patch1:		kdevelop-pg-qt-1.0.0-bison3.patch
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	kdelibs4-devel
@@ -36,8 +37,10 @@ This package contains development files of %{name}.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
+export CXX='%__cxx -std=c++11'
 %cmake_kde4
 %make
 

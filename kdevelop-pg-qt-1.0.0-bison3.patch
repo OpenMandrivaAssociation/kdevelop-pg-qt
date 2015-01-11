@@ -1,0 +1,45 @@
+From: Milian Wolff <mail@milianw.de>
+Date: Thu, 29 Nov 2012 14:56:40 +0000
+Subject: fix some warnings
+X-Git-Url: http://quickgit.kde.org/?p=kdevelop-pg-qt.git&a=commitdiff&h=ac587957cd0cabbc668604507e2cfebb6810ed09
+---
+fix some warnings
+---
+
+
+--- a/kdev-pg/kdev-pg-code-gen.cpp
++++ b/kdev-pg/kdev-pg-code-gen.cpp
+@@ -51,7 +51,7 @@
+ 
+   void generateCondition(const World::NodeSet& s, QTextStream& out)
+   {
+-    if(s.size() == 0 || s.size() == 1 && nodeCast<Model::ZeroItem*>(*s.begin()) != 0)
++    if(s.size() == 0 || (s.size() == 1 && nodeCast<Model::ZeroItem*>(*s.begin()) != 0))
+     {
+       out << "true /*epsilon*/";
+       return;
+
+--- a/kdev-pg/kdev-pg-lexer.ll
++++ b/kdev-pg/kdev-pg-lexer.ll
+@@ -425,7 +425,7 @@
+   strcpy(yyTextLine+currentOffset, yytext + (yymoreFlag ? lastTextLeng : 0)); /* append current */
+   /* strcpy is faster than strcat */
+   
+-  Q_ASSERT(strlen(yyTextLine) < yyTextLineLeng);
++  Q_ASSERT(strlen(yyTextLine) < size_t(yyTextLineLeng));
+   
+   lastTextLeng = strlen(yytext);
+   yymoreFlag = false;
+
+--- a/kdev-pg/kdev-pg-parser.yy
++++ b/kdev-pg/kdev-pg-parser.yy
+@@ -309,7 +309,7 @@
+     | T_CONTINUE {
+         r = "\nlxCONTINUE;\n";
+       }
+-    | /* empty */ { r = "\nlxSKIP\n" }
++    | /* empty */ { r = "\nlxSKIP\n"; }
+     ;
+ 
+ regexp
+
