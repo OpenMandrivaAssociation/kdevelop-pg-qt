@@ -21,7 +21,7 @@ implements the visitor-pattern and uses the Qt library. That is why it
 is ideal to be used in Qt-/KDE-based applications like KDevelop.
 
 %files
-%{_kde_bindir}/kdev-pg-qt
+%{_bindir}/kdev-pg-qt
 
 #--------------------------------------------------------------------
 %package devel
