@@ -1,15 +1,18 @@
+%define short_ver 2.0
+
 Summary:	KDevelop-PG-Qt is a parser generator
 Name:		kdevelop-pg-qt
-Version:	1.0.0
-Release:	10
+Version:	%{short_ver}.0
+Release:	1
 License:	GPLv2+
 Group:		Development/Other
 Url:		http://techbase.kde.org/Development/KDevelop-PG-Qt_Introduction
-Source0:	http://fr2.rpmfind.net/linux/KDE/stable/%{name}/%{version}/src/%{name}-%{version}.tar.bz2
-Patch1:		kdevelop-pg-qt-1.0.0-bison3.patch
+Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{short_ver}.tar.xz
 BuildRequires:	bison
 BuildRequires:	flex
-BuildRequires:	kdelibs4-devel
+BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(Qt5Test)
+BuildRequires:	cmake(ECM)
 
 %description
 KDevelop-PG-Qt is a parser generator written in readable source-code and
@@ -30,20 +33,20 @@ Requires:	%{name} = %{version}-%{release}
 This package contains development files of %{name}.
 
 %files devel
-%{_kde_includedir}/%{name}
-%{_kde_libdir}/cmake/KDevelop-PG-Qt/KDevelop-PG-QtConfig.cmake
-%{_kde_libdir}/cmake/KDevelop-PG-Qt/KDevelop-PG-QtConfigVersion.cmake
+%{_includedir}/%{name}
+%{_libdir}/cmake/KDevelop-PG-Qt/KDevelop-PG-QtConfig.cmake
+%{_libdir}/cmake/KDevelop-PG-Qt/KDevelop-PG-QtConfigVersion.cmake
 #--------------------------------------------------------------------
 
 %prep
-%setup -q
+%setup -qn %{name}-%{short_ver}
 %apply_patches
 
 %build
 export CXX='%__cxx -std=c++11'
-%cmake_kde4
-%make
+%cmake_kde5
+%ninja
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
