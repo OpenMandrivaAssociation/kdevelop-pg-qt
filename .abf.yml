@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kdevelop-pg-qt-2.0.tar.xz: 021cbe910468f4ae5169b8ff8933562c5e7dbe5f
+sources:
+  kdevelop-pg-qt-2.1.0.tar.xz: 074b033103e34fc15c571d26a031a394e8f1726e
