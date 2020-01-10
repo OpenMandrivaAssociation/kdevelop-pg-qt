@@ -40,7 +40,7 @@ This package contains development files of %{name}.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 export CXX='%__cxx -std=c++11'
