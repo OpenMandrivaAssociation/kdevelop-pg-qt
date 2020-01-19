@@ -1,4 +1,4 @@
-%define short_ver 2.1
+%define short_ver 2.2
 
 Summary:	KDevelop-PG-Qt is a parser generator
 Name:		kdevelop-pg-qt
