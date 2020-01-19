@@ -43,7 +43,7 @@ This package contains development files of %{name}.
 %autopatch -p1
 
 %build
-export CXX='%__cxx -std=c++11'
+#export CXX='%__cxx -std=c++11'
 %cmake_kde5
 %ninja
 
