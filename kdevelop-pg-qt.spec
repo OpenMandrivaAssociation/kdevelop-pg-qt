@@ -2,7 +2,7 @@
 
 Summary:	KDevelop-PG-Qt is a parser generator
 Name:		kdevelop-pg-qt
-Version:	%{short_ver}.0
+Version:	%{short_ver}.1
 Release:	1
 License:	GPLv2+
 Group:		Development/Other
@@ -39,8 +39,7 @@ This package contains development files of %{name}.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 #export CXX='%__cxx -std=c++11'
