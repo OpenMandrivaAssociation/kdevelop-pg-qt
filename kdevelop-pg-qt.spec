@@ -6,7 +6,7 @@ Version:	%{short_ver}.1
 Release:	2
 License:	GPLv2+
 Group:		Development/Other
-Url:		http://techbase.kde.org/Development/KDevelop-PG-Qt_Introduction
+Url:		https://techbase.kde.org/Development/KDevelop-PG-Qt_Introduction
 Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	bison
 BuildRequires:	flex
