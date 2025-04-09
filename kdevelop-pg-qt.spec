@@ -33,10 +33,10 @@ Requires:	%{name} = %{version}-%{release}
 This package contains development files of %{name}.
 
 %files devel
-#{_includedir}/%{name}
+%{_includedir}/KDevelopPGQt/
 %{_libdir}/cmake/KDevelop-PG-Qt/KDevelop-PG-QtConfig.cmake
 %{_libdir}/cmake/KDevelop-PG-Qt/KDevelop-PG-QtConfigVersion.cmake
-#{_libdir}/cmake/KDevelop-PG-Qt/KDevelop-PG-QtMacros.cmake
+%{_libdir}/cmake/KDevelopPGQt/
 
 #--------------------------------------------------------------------
 
